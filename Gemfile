@@ -33,3 +33,5 @@ group :production do
  gem 'turbolinks'
 
  gem 'bootstrap-sass'
+
+ gem 'bcrypt'
