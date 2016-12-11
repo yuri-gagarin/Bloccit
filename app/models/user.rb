@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+
+  has_many :posts
+
   before_save do
     self.email = email.downcase if email.present?
   end
@@ -13,5 +16,5 @@ class User < ApplicationRecord
             length: {minimum: 3, maximum: 254}
 
   has_secure_password
-  
+
 end
