@@ -50,13 +50,21 @@ posts = Post.all
   )
 end
 
-user = User.first
-user.update_attributes!(
+admin = User.first
+admin.update_attributes!(
   name: "Yuriy Ivanov",
   email: "ymivanov@icloud.com",
-  password: "admin1"
+  password: "admin1",
+  role: 'admin'
 )
-puts "Hello #{user.name}!"
+
+member = User.create!(
+  name: 'Member User',
+  email: 'member@example.com',
+  password: 'helloworld',
+  role: 'member'
+)
+puts "Hello #{admin.name}! You have administrator privileges"
 puts "Seed finished"
 puts "#{User.count} Users created"
 puts "#{SponsoredPost.count} SponsoredPosts created"
