@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 
   has_many :posts
+  has_many :comments
 
   before_save do
     self.email = email.downcase if email.present?
