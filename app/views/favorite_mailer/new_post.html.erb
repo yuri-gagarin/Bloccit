@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>You are now following "<%= @post.title %>". You will get all the comments, if you don't want to get notifications, you can unfavorite the post!</h1>
+    <small>
+      By: <%= @post.user.name %>
+    </small>
+    <p>
+      <%= link_to "View Post on Bloccit", topic_post_url(@post.topic, @post) %>
+    </p>
+  </body>
+</html>
